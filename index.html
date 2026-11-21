@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>دریا بیوتی | لوازم آرایشی و بهداشتی</title>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#fff7fb; --surface:#ffffff; --ink:#2a1238; --muted:#6e5a7e;
+  --pink:#ec4899; --violet:#7c3aed; --soft:#fbe3f1; --line:#f1d5e6;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#1a0d26; --surface:#27143a; --ink:#fbeaf6; --muted:#c2aad3;
+    --pink:#f472b6; --violet:#a78bfa; --soft:#3a1d52; --line:#47285f; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#1a0d26; --surface:#27143a; --ink:#fbeaf6; --muted:#c2aad3;
+  --pink:#f472b6; --violet:#a78bfa; --soft:#3a1d52; --line:#47285f; color-scheme:dark;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Vazirmatn",Tahoma,sans-serif;line-height:1.9}
+a{color:inherit;text-decoration:none}
+a:focus-visible,button:focus-visible{outline:3px solid var(--violet);outline-offset:3px;border-radius:8px}
+.wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+
+header.top{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+.logo{font-weight:800;font-size:1.25rem}
+.logo span{background:linear-gradient(90deg,var(--pink),var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent}
+nav{display:flex;gap:18px;font-size:.95rem;color:var(--muted)}
+nav a:hover{color:var(--violet)}
+
+.hero{position:relative;overflow:hidden;border-radius:32px;margin-top:6px;padding:64px 28px 72px;
+  background:linear-gradient(135deg,#f9a8d4 0%,#e879f9 50%,#8b5cf6 100%);color:#fff;text-align:center}
+.hero::before,.hero::after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.16)}
+.hero::before{width:260px;height:260px;top:-90px;left:-60px}
+.hero::after{width:180px;height:180px;bottom:-60px;right:-40px}
+.hero>*{position:relative}
+.hero h1{margin:0;font-size:clamp(2.6rem,10vw,5rem);font-weight:800;line-height:1.2}
+.hero p{margin:14px auto 28px;max-width:30ch;font-size:1.15rem}
+.btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-block;padding:12px 26px;border-radius:999px;font-weight:600;border:2px solid #fff}
+.btn.solid{background:#fff;color:#6d28d9}
+.btn.ghost{color:#fff}
+.btn:hover{transform:translateY(-2px)}
+
+section{padding:56px 0 8px}
+h2{margin:0 0 6px;font-size:1.6rem}
+.sub{margin:0 0 24px;color:var(--muted)}
+
+.cats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+.cat{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:22px}
+.cat .dot{width:46px;height:46px;border-radius:16px;display:grid;place-items:center;font-size:1.5rem;margin-bottom:10px;background:var(--soft)}
+.cat:nth-child(even){border-radius:22px 22px 22px 6px}
+.cat h3{margin:0 0 4px;font-size:1.1rem}
+.cat p{margin:0;color:var(--muted);font-size:.92rem}
+
+.brands{display:flex;flex-wrap:wrap;gap:10px}
+.brands span{padding:8px 20px;border-radius:999px;background:var(--soft);font-weight:600}
+
+.ship{display:flex;gap:20px;align-items:center;flex-wrap:wrap;margin-top:8px;padding:28px;border-radius:26px;
+  background:linear-gradient(120deg,var(--soft),var(--surface));border:1px solid var(--line)}
+.ship .big{font-size:2.6rem}
+.ship h2{margin:0}
+.ship p{margin:4px 0 0;color:var(--muted)}
+
+.visit{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.box{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:24px}
+.box h3{margin:0 0 8px}
+.box p{margin:0;color:var(--muted)}
+
+footer{margin-top:56px;padding:28px 0 36px;text-align:center;color:var(--muted);border-top:1px solid var(--line);font-size:.9rem}
+@media (max-width:560px){nav{display:none}.hero{padding:48px 20px 56px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn:hover{transform:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="logo" href="#top"><span>دریا بیوتی</span></a>
+    <nav>
+      <a href="#products">محصولات</a>
+      <a href="#brands">برندها</a>
+      <a href="#visit">آدرس</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <div class="hero">
+      <h1>دریا بیوتی</h1>
+      <p>فروش انواع لوازم آرایشی و بهداشتی؛ ارسال به هرجایی که تو باشی</p>
+      <div class="btns">
+        <a class="btn solid" href="https://www.instagram.com/daarya_beauty" target="_blank" rel="noopener">سفارش از اینستاگرام</a>
+        <a class="btn ghost" href="#visit">آدرس فروشگاه</a>
+      </div>
+    </div>
+
+    <section id="products">
+      <h2>محصولات ما</h2>
+      <p class="sub">از آرایش تا مراقبت روزانه، همه‌چیز یک‌جا</p>
+      <div class="cats">
+        <div class="cat"><div class="dot">💄</div><h3>رژ و آرایش</h3><p>رژلب، رژگونه، سایه و لوازم آرایشی</p></div>
+        <div class="cat"><div class="dot">🧴</div><h3>مراقبت پوستی</h3><p>کرم، سرم و محصولات روتین پوست</p></div>
+        <div class="cat"><div class="dot">🫧</div><h3>شامپو و مو</h3><p>شامپو و محصولات مراقبت مو</p></div>
+        <div class="cat"><div class="dot">🌸</div><h3>عطر و اسپلش</h3><p>عطر و بادی‌اسپلش‌های خوش‌بو</p></div>
+      </div>
+    </section>
+
+    <section id="brands">
+      <h2>برندها</h2>
+      <p class="sub">برندهایی که در دریا بیوتی پیدا می‌کنید</p>
+      <div class="brands">
+        <span>کزارکس</span><span>اکسیس وای</span><span>گارنیر</span>
+        <span>نیتروژینا</span><span>سیمپل</span><span>سادور</span>
+      </div>
+    </section>
+
+    <section>
+      <div class="ship">
+        <div class="big">🛍️</div>
+        <div>
+          <h2>ارسال به سراسر ایران</h2>
+          <p>سفارشت را در پیام اینستاگرام بفرست، به هرجا که باشی می‌رسانیم.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="visit">
+      <h2>به ما سر بزنید</h2>
+      <p class="sub">می‌توانید محصولات را حضوری ببینید و انتخاب کنید</p>
+      <div class="visit">
+        <div class="box">
+          <h3>آدرس</h3>
+          <p>تهران، مهرآباد جنوبی، خیابان ۴۵ متری زرند، خیابان واشقانی فراهانی، پاساژ ایران زمین، پلاک ۷۳۴</p>
+        </div>
+        <div class="box">
+          <h3>اینستاگرام</h3>
+          <p><a href="https://www.instagram.com/daarya_beauty" target="_blank" rel="noopener" style="color:var(--violet);font-weight:600">@daarya_beauty</a><br>ویدیوها و تازه‌های فروشگاه را آنجا ببینید.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>© دریا بیوتی</footer>
+</div>
+</body>
+</html>
