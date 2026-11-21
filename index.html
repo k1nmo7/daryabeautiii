@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>دریا بیوتی | لوازم آرایشی و بهداشتی</title>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#fff7fb; --surface:#ffffff; --ink:#2a1238; --muted:#6e5a7e;
+  --pink:#ec4899; --violet:#7c3aed; --soft:#fbe3f1; --line:#f1d5e6;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#1a0d26; --surface:#27143a; --ink:#fbeaf6; --muted:#c2aad3;
+    --pink:#f472b6; --violet:#a78bfa; --soft:#3a1d52; --line:#47285f; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#1a0d26; --surface:#27143a; --ink:#fbeaf6; --muted:#c2aad3;
+  --pink:#f472b6; --violet:#a78bfa; --soft:#3a1d52; --line:#47285f; color-scheme:dark;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Vazirmatn",Tahoma,sans-serif;line-height:1.9}
+a{color:inherit;text-decoration:none}
+a:focus-visible,button:focus-visible{outline:3px solid var(--violet);outline-offset:3px;border-radius:8px}
+.wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+
+header.top{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+.logo{font-weight:800;font-size:1.25rem}
+.logo span{background:linear-gradient(90deg,var(--pink),var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent}
+nav{display:flex;gap:18px;font-size:.95rem;color:var(--muted)}
+nav a:hover{color:var(--violet)}
+
+.hero{position:relative;overflow:hidden;border-radius:32px;margin-top:6px;padding:64px 28px 72px;
+  background:linear-gradient(135deg,#f9a8d4 0%,#e879f9 50%,#8b5cf6 100%);color:#fff;text-align:center}
+.hero::before,.hero::after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.16)}
+.hero::before{width:260px;height:260px;top:-90px;left:-60px}
+.hero::after{width:180px;height:180px;bottom:-60px;right:-40px}
+.hero>*{position:relative}
+.hero h1{margin:0;font-size:clamp(2.6rem,10vw,5rem);font-weight:800;line-height:1.2}
+.hero p{margin:14px auto 28px;max-width:30ch;font-size:1.15rem}
+.btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-block;padding:12px 26px;border-radius:999px;font-weight:600;border:2px solid #fff}
+.btn.solid{background:#fff;color:#6d28d9}
+.btn.ghost{color:#fff}
+.btn:hover{transform:translateY(-2px)}
+
+section{padding:56px 0 8px}
+h2{margin:0 0 6px;font-size:1.6rem}
+.sub{margin:0 0 24px;color:var(--muted)}
+
+.cats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+.cat{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:22px}
+.cat .dot{width:46px;height:46px;border-radius:16px;display:grid;place-items:center;font-size:1.5rem;margin-bottom:10px;background:var(--soft)}
+.cat:nth-child(even){border-radius:22px 22px 22px 6px}
+.cat h3{margin:0 0 4px;font-size:1.1rem}
+.cat p{margin:0;color:var(--muted);font-size:.92rem}
+
+.brands{display:flex;flex-wrap:wrap;gap:10px}
+.brands span{padding:8px 20px;border-radius:999px;background:var(--soft);font-weight:600}
+
+.ship{display:flex;gap:20px;align-items:center;flex-wrap:wrap;margin-top:8px;padding:28px;border-radius:26px;
+  background:linear-gradient(120deg,var(--soft),var(--surface));border:1px solid var(--line)}
+.ship .big{font-size:2.6rem}
+.ship h2{margin:0}
+.ship p{margin:4px 0 0;color:var(--muted)}
+
+.visit{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.box{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:24px}
+.box h3{margin:0 0 8px}
+.box p{margin:0;color:var(--muted)}
+
+.shop{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:24px;background:var(--surface);border:1px solid var(--line);border-radius:26px;padding:24px}
+.shop .pic{min-height:300px;border-radius:20px;display:grid;place-items:center;font-size:6rem;background:linear-gradient(135deg,var(--soft),#e9d5ff)}
+.crumb{font-size:.85rem;color:var(--muted);margin-bottom:6px}
+.shop h3{margin:0;font-size:1.3rem;line-height:1.6}
+.en{margin:2px 0 8px;color:var(--muted);direction:ltr;text-align:right;font-size:.95rem}
+.size{margin:0 0 16px}
+.pricebox{border:1px solid var(--line);border-radius:18px;padding:16px;background:var(--bg)}
+.off{display:inline-block;background:#e11d48;color:#fff;border-radius:8px;padding:0 10px;font-weight:800;margin-left:8px}
+.old{color:var(--muted);text-decoration:line-through}
+.price{font-size:1.6rem;font-weight:800;margin:4px 0}
+.inst{color:var(--violet);font-weight:600;font-size:.92rem;margin-bottom:12px}
+.add{width:100%;border:0;border-radius:12px;padding:12px;font:inherit;font-weight:800;color:#fff;cursor:pointer;background:linear-gradient(90deg,var(--pink),var(--violet))}
+.add[disabled]{opacity:.85}
+.cartbtn{border:1px solid var(--line);background:var(--surface);color:var(--ink);font:inherit;border-radius:999px;padding:6px 16px;cursor:pointer}
+.more{margin-top:18px;background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:22px}
+.more h3{margin:0 0 8px}
+.more p{margin:0 0 14px;color:var(--muted)}
+.specs{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:0 24px}
+.specs div{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-top:1px solid var(--line)}
+.specs dt,.specs span:first-child{color:var(--muted)}
+@media (max-width:700px){.shop{grid-template-columns:1fr}.shop .pic{min-height:200px}}
+.band{background:linear-gradient(120deg,#ec4899,#8b5cf6);border-radius:26px;padding:20px;color:#fff}
+.band h2{color:#fff;margin:0 0 2px}.band .sub{color:#fde7f6;margin-bottom:16px}
+.rail{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px}
+.card{flex:0 0 220px;scroll-snap-align:start;background:var(--surface);color:var(--ink);border:0;border-radius:16px;padding:12px;text-align:right;font:inherit;cursor:pointer;display:flex;flex-direction:column}
+.card .im{height:130px;border-radius:12px;display:grid;place-items:center;font-size:3.2rem;background:linear-gradient(135deg,var(--soft),#e9d5ff);margin-bottom:10px}
+.card .br{color:var(--muted);font-size:.85rem}
+.card .nm{font-size:.92rem;line-height:1.7;height:3.4em;overflow:hidden;margin-bottom:8px}
+.card .pr{margin-top:auto;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.card .pr b{font-size:1.02rem}.card .pr s{color:var(--muted);font-size:.82rem}
+.card .pr em{font-style:normal;background:#e11d48;color:#fff;border-radius:8px;padding:0 8px;font-weight:800;font-size:.85rem}
+.back{border:0;background:none;color:var(--violet);font:inherit;font-weight:600;cursor:pointer;padding:8px 0;margin-bottom:6px}
+.pay{display:inline-block;margin-top:10px;padding:6px 16px;border-radius:999px;background:var(--violet);color:#fff;font-weight:600;font-size:.92rem}
+footer{margin-top:56px;padding:28px 0 36px;text-align:center;color:var(--muted);border-top:1px solid var(--line);font-size:.9rem}
+@media (max-width:560px){nav{display:none}.hero{padding:48px 20px 56px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn:hover{transform:none}}
+
+.cartpage{background:var(--surface);border:1px solid var(--line);border-radius:26px;padding:24px}
+.carthead{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:18px}
+.carthead h2{margin:0}
+.cartrow{display:grid;grid-template-columns:64px minmax(0,1fr) auto;gap:14px;align-items:center;padding:16px 0;border-bottom:1px solid var(--line)}
+.cartemoji{width:64px;height:64px;border-radius:14px;background:linear-gradient(135deg,var(--soft),#e9d5ff);display:grid;place-items:center;font-size:2rem}
+.cartname{font-weight:600;line-height:1.7}
+.cartmeta{color:var(--muted);font-size:.9rem}
+.qty{display:flex;align-items:center;gap:10px;margin-top:8px}
+.qty button{width:30px;height:30px;border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:9px;font:inherit;cursor:pointer}
+.remove{border:0;background:none;color:#e11d48;font:inherit;cursor:pointer;margin-top:4px}
+.cartprice{font-weight:800;white-space:nowrap;text-align:left}
+.carttotal{margin-top:20px;padding:18px;border-radius:18px;background:var(--bg);border:1px solid var(--line)}
+.totalline{display:flex;justify-content:space-between;gap:12px;padding:5px 0}
+.totalfinal{font-size:1.2rem;font-weight:800;border-top:1px solid var(--line);margin-top:8px;padding-top:12px}
+.cartactions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.cartactions .add{flex:1;min-width:180px}
+.secondary{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:12px;padding:10px 18px;font:inherit;font-weight:700;cursor:pointer}
+.emptycart{text-align:center;padding:38px 12px;color:var(--muted)}
+.emptycart strong{display:block;color:var(--ink);font-size:1.1rem;margin-bottom:8px}
+@media(max-width:560px){.cartpage{padding:16px}.cartrow{grid-template-columns:54px minmax(0,1fr);}.cartemoji{width:54px;height:54px}.cartprice{grid-column:2;text-align:right}.carthead .secondary{width:100%}}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="logo" href="#top"><span>دریا بیوتی</span></a>
+    <nav>
+      <a href="#products">محصولات</a>
+      <a href="#samples">خرید</a>
+      <a href="#brands">برندها</a>
+      <a href="#visit">آدرس</a>
+    </nav>
+    <button class="cartbtn" id="cart" type="button" aria-label="سبد خرید">🛒 <span id="cnt">۰</span></button>
+  </header>
+
+  <main id="top">
+    <div class="hero">
+      <h1>دریا بیوتی</h1>
+      <p>فروش انواع لوازم آرایشی و بهداشتی؛ ارسال به هرجایی که تو باشی</p>
+      <div class="btns">
+        <a class="btn solid" href="https://www.instagram.com/daarya_beauty" target="_blank" rel="noopener">سفارش از اینستاگرام</a>
+        <a class="btn ghost" href="#visit">آدرس فروشگاه</a>
+      </div>
+    </div>
+
+    <section id="products">
+      <h2>محصولات ما</h2>
+      <p class="sub">از آرایش تا مراقبت روزانه، همه‌چیز یک‌جا</p>
+      <div class="cats">
+        <div class="cat"><div class="dot">💄</div><h3>رژ و آرایش</h3><p>رژلب، رژگونه، سایه و لوازم آرایشی</p></div>
+        <div class="cat"><div class="dot">🧴</div><h3>مراقبت پوستی</h3><p>کرم، سرم و محصولات روتین پوست</p></div>
+        <div class="cat"><div class="dot">🫧</div><h3>شامپو و مو</h3><p>شامپو و محصولات مراقبت مو</p></div>
+        <div class="cat"><div class="dot">🌸</div><h3>عطر و اسپلش</h3><p>عطر و بادی‌اسپلش‌های خوش‌بو</p></div>
+      </div>
+    </section>
+
+    <section id="samples">
+      <div class="band">
+        <h2>محصولات ویژه</h2>
+        <p class="sub">برای دیدن جزئیات روی محصول بزنید</p>
+        <div class="rail" id="rail"></div>
+      </div>
+    </section>
+
+    <section id="detail" hidden>
+      <button class="back" id="back" type="button">‹ بازگشت به محصولات</button>
+      <div class="shop">
+        <div class="pic" role="img" aria-label="تصویر محصول" id="d-pic">🫙</div>
+        <div>
+          <div class="crumb" id="d-brand"></div>
+          <h3 id="d-name"></h3>
+          <div class="en" id="d-en"></div>
+          <div class="pricebox">
+            <div><span class="off" id="d-off"></span><span class="old" id="d-old"></span></div>
+            <div class="price" id="d-price"></div>
+            <div class="inst" id="d-inst"></div>
+            <button class="add" id="add" type="button">افزودن به سبد خرید</button>
+          </div>
+        </div>
+      </div>
+      <div class="more" id="d-more" hidden>
+        <h3>درباره محصول</h3>
+        <p>کرم آبرسان صورت برای رطوبت‌رسانی روزانه که سریع جذب می‌شود و حس خشکی و کشیدگی پوست را کم می‌کند. بافتی سبک و نرم دارد و سنگینی روی پوست نمی‌گذارد.</p>
+        <h3>مشخصات</h3>
+        <div class="specs">
+          <div><span>دغدغه پوستی</span><span>خطوط ریز و چروک، قرمزی پوست</span></div>
+          <div><span>ناحیه استفاده</span><span>صورت، گردن</span></div>
+          <div><span>بافت محصول</span><span>کرم</span></div>
+          <div><span>ترکیبات کلیدی</span><span>هیالورونیک اسید</span></div>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="cartpage" hidden>
+      <div class="cartpage">
+        <div class="carthead">
+          <h2>سبد خرید شما</h2>
+          <button class="secondary" id="continue" type="button">ادامه خرید ←</button>
+        </div>
+        <div id="cartitems"></div>
+        <div id="cartsummary" hidden>
+          <div class="carttotal">
+            <div class="totalline"><span>تعداد کالا</span><strong id="cartcount">۰</strong></div>
+            <div class="totalline totalfinal"><span>مبلغ قابل پرداخت</span><strong id="carttotal">۰ تومان</strong></div>
+          </div>
+          <div class="cartactions">
+            <a class="add" id="checkout" href="https://www.instagram.com/daarya_beauty" target="_blank" rel="noopener" style="text-align:center;text-decoration:none">ادامه ثبت سفارش در اینستاگرام</a>
+            <button class="secondary" id="clearcart" type="button">خالی کردن سبد</button>
+          </div>
+          <p class="cartmeta">هزینه ارسال، در صورت وجود، هنگام هماهنگی سفارش مشخص می‌شود.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="brands">
+      <h2>برندها</h2>
+      <p class="sub">برندهایی که در دریا بیوتی پیدا می‌کنید</p>
+      <div class="brands">
+        <span>کزارکس</span><span>اکسیس وای</span><span>گارنیر</span>
+        <span>نیتروژینا</span><span>سیمپل</span><span>سادور</span>
+      </div>
+    </section>
+
+    <section>
+      <div class="ship">
+        <div class="big">🛍️</div>
+        <div>
+          <h2>ارسال به سراسر ایران</h2>
+          <p>سفارشت را در پیام اینستاگرام بفرست، به هرجا که باشی می‌رسانیم.</p>
+          <span class="pay">پرداخت اقساطی با اسنپ‌پی</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="visit">
+      <h2>به ما سر بزنید</h2>
+      <p class="sub">می‌توانید محصولات را حضوری ببینید و انتخاب کنید</p>
+      <div class="visit">
+        <div class="box">
+          <h3>آدرس</h3>
+          <p>تهران، مهرآباد جنوبی، خیابان ۴۵ متری زرند، خیابان واشقانی فراهانی، پاساژ ایران زمین، پلاک ۷۳۴</p>
+        </div>
+        <div class="box">
+          <h3>اینستاگرام</h3>
+          <p><a href="https://www.instagram.com/daarya_beauty" target="_blank" rel="noopener" style="color:var(--violet);font-weight:600">@daarya_beauty</a><br>ویدیوها و تازه‌های فروشگاه را آنجا ببینید.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>© دریا بیوتی</footer>
+</div>
+<script>
+(function(){
+  var P=[
+   {id:'cosrx',emoji:'🫙',brand:'کوزارکس',name:'کرم آبرسان کوزارکس مدل Hyaluronic Acid حجم ۱۰۰ میلی لیتر',en:'Cosrx Hyaluronic Acid Intensive Cream 100 ml',old:3900000,price:3361999,off:14,more:1},
+   {id:'pixel',emoji:'🧴',brand:'پیکسل',name:'ضد آفتاب بدون رنگ مناسب پوست های جوش دار و چرب حجم ۵۰ میلی لیتر',old:988000,price:592800,off:40},
+   {id:'dafi',emoji:'💧',brand:'دافی',name:'میسلار واتر مناسب پوست های خشک تا نرمال حجم ۲۰۰ میلی لیتر دافی',old:318000,price:190800,off:40},
+   {id:'royal',emoji:'🫧',brand:'رویوال',name:'فوم شستشوی صورت مناسب انواع پوست حجم ۱۵۰ میلی لیتر رویوال',old:879500,price:527700,off:40},
+   {id:'derma',emoji:'🧪',brand:'درماتیپیک',name:'فلوییند مرطوب کننده و آبرسان مناسب پوست مختلط و چرب حجم ۵۰میلی لیتر',old:659800,price:404630,off:39}
+  ];
+  var f=function(n){return Number(n).toLocaleString('fa-IR')};
+  var $=function(i){return document.getElementById(i)};
+  var rail=$('rail'),det=$('detail'),cartpage=$('cartpage'),cnt=$('cnt'),add=$('add');
+  var cur=null, cart={};
+  try{cart=JSON.parse(localStorage.getItem('daaryaBeautyCart')||'{}')||{};}catch(e){cart={};}
+  function save(){try{localStorage.setItem('daaryaBeautyCart',JSON.stringify(cart));}catch(e){}}
+  function count(){return Object.keys(cart).reduce(function(s,id){return s+(cart[id]||0);},0);}
+  function total(){return P.reduce(function(s,p){return s+p.price*(cart[p.id]||0);},0);}
+  function updateBadge(){cnt.textContent=f(count());}
+  rail.innerHTML=P.map(function(p){
+    return '<button class="card" type="button" data-id="'+p.id+'"><div class="im">'+p.emoji+'</div><div class="br">'+p.brand+'</div><div class="nm">'+p.name+'</div><div class="pr"><em>'+f(p.off)+'٪</em><s>'+f(p.old)+'</s><b>'+f(p.price)+' تومان</b></div></button>';
+  }).join('');
+  rail.addEventListener('click',function(e){
+    var c=e.target.closest('.card'); if(c) location.hash='p-'+c.dataset.id;
+  });
+  $('cart').addEventListener('click',function(){location.hash='cart';});
+  $('continue').addEventListener('click',function(){location.hash='samples';});
+  $('back').addEventListener('click',function(){location.hash='samples';});
+  add.addEventListener('click',function(){
+    if(cur){cart[cur.id]=(cart[cur.id]||0)+1;save();updateBadge();renderCart();add.textContent='به سبد اضافه شد ✓';}
+    setTimeout(function(){add.textContent='افزودن به سبد خرید'},1500);
+  });
+  function renderCart(){
+    var ids=Object.keys(cart).filter(function(id){return cart[id]>0;});
+    $('cartsummary').hidden=!ids.length;
+    if(!ids.length){
+      $('cartitems').innerHTML='<div class="emptycart"><strong>سبد خریدت خالیه</strong><p>هنوز محصولی به سبد خرید اضافه نکردی.</p><button class="add" id="emptycontinue" type="button">مشاهده محصولات</button></div>';
+      $('emptycontinue').addEventListener('click',function(){location.hash='samples';});
+      $('cartcount').textContent='۰';$('carttotal').textContent='۰ تومان';
+      return;
+    }
+    $('cartitems').innerHTML=ids.map(function(id){
+      var p=P.filter(function(x){return x.id===id;})[0]; if(!p)return '';
+      return '<div class="cartrow"><div class="cartemoji">'+p.emoji+'</div><div><div class="cartname">'+p.name+'</div><div class="cartmeta">'+f(p.price)+' تومان برای هر عدد</div><div class="qty"><button type="button" data-action="minus" data-id="'+id+'" aria-label="کم کردن">−</button><strong>'+f(cart[id])+'</strong><button type="button" data-action="plus" data-id="'+id+'" aria-label="زیاد کردن">+</button></div><button class="remove" type="button" data-action="remove" data-id="'+id+'">حذف محصول</button></div><div class="cartprice">'+f(p.price*cart[id])+' تومان</div></div>';
+    }).join('');
+    $('cartcount').textContent=f(count());$('carttotal').textContent=f(total())+' تومان';
+    $('checkout').href='https://www.instagram.com/daarya_beauty';
+  }
+  $('cartitems').addEventListener('click',function(e){
+    var b=e.target.closest('[data-action]');if(!b)return;
+    var id=b.dataset.id,action=b.dataset.action;
+    if(action==='plus')cart[id]=(cart[id]||0)+1;
+    if(action==='minus')cart[id]=Math.max(0,(cart[id]||0)-1);
+    if(action==='remove'||cart[id]===0)delete cart[id];
+    save();updateBadge();renderCart();
+  });
+  $('clearcart').addEventListener('click',function(){cart={};save();updateBadge();renderCart();});
+  function route(){
+    var h=location.hash.slice(1),p=null,isCart=h==='cart';
+    if(h.indexOf('p-')===0)p=P.filter(function(x){return 'p-'+x.id===h})[0];
+    var kids=document.querySelectorAll('main > *');
+    for(var i=0;i<kids.length;i++){kids[i].hidden=!!p||isCart ? (kids[i]!==det&&kids[i]!==cartpage) : (kids[i]===det||kids[i]===cartpage);}
+    det.hidden=!p;cartpage.hidden=!isCart;
+    if(p){
+      cur=p;$('d-pic').textContent=p.emoji;$('d-brand').textContent=p.brand;
+      $('d-name').textContent=p.name;$('d-en').textContent=p.en||'';
+      $('d-off').textContent=f(p.off)+'٪';$('d-old').textContent=f(p.old);
+      $('d-price').textContent=f(p.price)+' تومان';
+      $('d-inst').textContent='۴ قسط ماهانه '+f(Math.round(p.price/4))+' تومانی با اسنپ‌پی';
+      $('d-more').hidden=!p.more;window.scrollTo(0,0);
+    } else {cur=null;}
+    if(isCart){renderCart();window.scrollTo(0,0);}
+  }
+  window.addEventListener('hashchange',route);updateBadge();renderCart();route();
+})();
+</script>
+</body>
+</html>
